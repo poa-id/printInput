@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheet.css">
+    <title>Events</title>
+
+</head>
+
+<body>
+    <main class="form">
+        <div>
+            <label for="input">Ingrese su nombre de usuario</label>
+            <input type="text" id="userInput" placeholder="JohnDoe" onkeydown="enter(event)">
+        </div>
+        <div>
+            <button class="button" onclick="enterInput()">Buscar Usuario</button>
+        </div>
+    </main>
+    <script>
+        function enterInput() {
+            const usuario = document.getElementById(`userInput`).value;
+            console.log(usuario);
+            clearInput();
+        }
+
+        function enter(action) {
+            if (action.keyCode === 13) {
+                console.log(action.target.value);
+                clearInput();
+            }
+        }
+
+
+        function clearInput() {
+            document.getElementById("userInput").value = "";
+        }
+
+    </script>
+</body>
+
+</html>
